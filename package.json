@@ -1,8 +1,8 @@
 {
-	"name": "token-price-watch",
-	"displayName": "Token Price Watch",
-	"description": "Watch coin contract price via binance API",
-	"version": "0.0.1",
+  "name": "token-price-watch",
+  "displayName": "Token Price Watch",
+  "description": "Watch coin contract price via binance API",
+  "version": "0.0.1",
   "publisher": "ludis",
   "keywords": [
     "btc",
@@ -12,18 +12,18 @@
     "binance",
     "vscode"
   ],
-	"engines": {
-		"vscode": "^1.65.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
   "activationEvents": [
     "onStartupFinished"
   ],
-	"main": "./extension.js",
-	"contributes": {
+  "main": "./extension.js",
+  "contributes": {
     "configuration": {
       "properties": {
         "token-price-watch.enable": {
@@ -33,7 +33,10 @@
         },
         "token-price-watch.symbols": {
           "type": "array",
-          "default": ["btcusdt", "ethusdt"],
+          "default": [
+            "btcusdt",
+            "ethusdt"
+          ],
           "description": "",
           "items": {
             "type": "string"
@@ -46,12 +49,17 @@
         "token-price-watch.symbolText": {
           "type": "string",
           "default": "Full",
-          "enum": ["Full", "Token", "Initials", "None"],
+          "enum": [
+            "Full",
+            "Token",
+            "Initials",
+            "None"
+          ],
           "enumDescriptions": [
             "Full: show full symbol, like: BTCUSDT",
             "Token: show token symbol, like: BTC",
             "Initials: show token initials, for example BTC shows B",
-            "None: show nothing" 
+            "None: show nothing"
           ]
         },
         "token-price-watch.updateInterval": {
@@ -69,24 +77,27 @@
       }
     }
   },
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
-	},
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/flute/vscode-token-price-watch"
   },
-	"devDependencies": {
-		"@types/vscode": "^1.65.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.1.0",
-		"@types/node": "14.x",
-		"eslint": "^8.9.0",
-		"glob": "^7.2.0",
-		"mocha": "^9.2.1",
-		"typescript": "^4.5.5",
-		"@vscode/test-electron": "^2.1.2"
-	}
+  "devDependencies": {
+    "@types/vscode": "^1.65.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "eslint": "^8.9.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.1",
+    "typescript": "^4.5.5",
+    "@vscode/test-electron": "^2.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
 }

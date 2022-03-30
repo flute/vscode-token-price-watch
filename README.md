@@ -4,7 +4,7 @@ Visual Studio Code extension for display coin contract price via binance API
 ## Installation
 Search for **token-price-watch** in VS Code extensions.
 
-[Visual Studio Code Marketplace page](https://marketplace.visualstudio.com/items?itemName=chenwuai.binance-price-watch)
+[Visual Studio Code Marketplace page](https://marketplace.visualstudio.com/items?itemName=ludis.token-price-watch)
 
 ## Settings
 ```
