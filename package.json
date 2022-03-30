@@ -2,7 +2,7 @@
   "name": "token-price-watch",
   "displayName": "Token Price Watch",
   "description": "Watch coin contract price via binance API",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "ludis",
   "keywords": [
     "btc",
