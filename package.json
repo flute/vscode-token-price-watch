@@ -29,7 +29,7 @@
         "token-price-watch.enable": {
           "type": "boolean",
           "default": true,
-          "description": "Enable display price"
+          "description": "Enable display price. \n 是否开启"
         },
         "token-price-watch.symbols": {
           "type": "array",
@@ -37,7 +37,7 @@
             "btcusdt",
             "ethusdt"
           ],
-          "description": "",
+          "description": "Array of trading pair to display. \n 要展示的交易对",
           "items": {
             "type": "string"
           },
@@ -49,6 +49,7 @@
         "token-price-watch.symbolText": {
           "type": "string",
           "default": "Full",
+          "description": "Trading Pair Display Name. \n 交易对名称展示",
           "enum": [
             "Full",
             "Token",
@@ -56,23 +57,35 @@
             "None"
           ],
           "enumDescriptions": [
-            "Full: show full symbol, like: BTCUSDT",
-            "Token: show token symbol, like: BTC",
-            "Initials: show token initials, for example BTC shows B",
-            "None: show nothing"
+            "Display the full name of the trading pair, E.g: BTCUSDT.\n 展示交易对全称，如BTCUSDT",
+            "Display only the token name, E.g: BTC.\n 只展示Token名称，如 BTC",
+            "Display token initials, E.g: BTCUSDT is displayed as B.\n 展示交易对首字母，比如 BTCUSDT 会展示为 B",
+            "Show nothing.\n 啥都不展示"
+          ]
+        },
+        "token-price-watch.position": {
+          "type": "string",
+          "default": "Right",
+          "enum": [
+            "Right",
+            "Left"
+          ],
+          "enumDescriptions": [
+            "Displayed on the right side of the status bar. \n 展示在状态栏右侧",
+            "Displayed on the left side of the status bar. \n 展示在状态栏左侧"
           ]
         },
         "token-price-watch.updateInterval": {
           "type": "number",
           "default": 3000,
           "minimum": 1000,
-          "description": "Configuring polling requests the latest data time interval, Unit: milliseconds"
+          "description": "Configuring polling requests the latest data time interval, Unit: milliseconds. \n 配置轮询间隔，单位毫秒"
         },
         "token-price-watch.url": {
           "type": "string",
           "default": "https://fapi.binance.com/fapi/v1/ticker/price",
           "format": "uri",
-          "description": "Configuring contract base API, (try not to modify)"
+          "description": "Configuring contract base API, (try not to modify). \n 配置接口地址，（最好不要修改）"
         }
       }
     }

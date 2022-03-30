@@ -1,5 +1,5 @@
 # token-price-watch
-Visual Studio Code extension for display coin contract price via binance API
+Visual Studio Code extension for display coin contract price via binance API.
 
 ## Installation
 Search for **token-price-watch** in VS Code extensions.
@@ -10,6 +10,9 @@ Search for **token-price-watch** in VS Code extensions.
 ```
   // Enable display price
   "token-price-watch.enable": true,
+
+  // Display position
+  "token-price-watch.position": "Right",
 
 
   // Configuring coin that need to monitor, "btcusdt" = "btc" + "usdt"

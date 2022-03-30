@@ -14,13 +14,6 @@ class App {
     context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(() => this.handleConfigChange()));
   }
   handleConfigChange() {
-    this.timer && clearInterval(this.timer);
-    const coins = util.getConfigurationCoins();
-    Object.keys(this.statusBarItems).forEach((item) => {
-      if (!coins.includes(item)) {
-        this.deletePrice(item)
-      }
-    });
     this.init();
   }
   fetchData() {
@@ -61,20 +54,20 @@ class App {
     delete this.statusBarItems[symbol];
   }
   createStatusBarItem(text = '') {
-    const barItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+    const position = util.getConfigurationPosition()
+    const barItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment[position]);
     barItem.text = text;
     barItem.show();
     return barItem;
   }
   init() {
+    // init
+    this.timer && clearInterval(this.timer);
+    Object.keys(this.statusBarItems).forEach((item) => {
+      this.deletePrice(item)
+    })
     const enable = util.getConfigurationEnable()
-    if (!enable) {
-      this.timer && clearInterval(this.timer);
-      Object.keys(this.statusBarItems).forEach((item) => {
-        this.deletePrice(item)
-      })
-      return
-    }
+    if (!enable) return
     this.coins = util.getConfigurationCoins();
     this.updateInterval = util.getConfigurationTime()
     this.API_ADDRESS = util.getConfigurationBaseURL()

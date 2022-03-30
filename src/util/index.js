@@ -30,6 +30,11 @@ const util = {
   getConfigurationBaseURL() {
     const config = vscode.workspace.getConfiguration();
     return config.get('token-price-watch.url')
+  },
+
+  getConfigurationPosition() {
+    const config = vscode.workspace.getConfiguration();
+    return config.get('token-price-watch.position')
   }
 }
 
